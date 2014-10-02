@@ -1,5 +1,6 @@
 ﻿Module Module1
-    Dim a, b As Integer
+    Dim a as integer
+dim b As Integer
     Sub Main()
         Console.Write("a=")
         a = Console.ReadLine
