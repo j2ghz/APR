@@ -1,6 +1,5 @@
 ﻿Module Module1
-    Dim a as integer
-dim b As Integer
+    Dim a, b As Long
     Sub Main()
         Console.Write("a=")
         a = Console.ReadLine
@@ -15,7 +14,7 @@ dim b As Integer
         End Select
     End Sub
     Sub zkouseni()
-        For i = Math.Min(a, b) To 1 Step -1
+        For i As Long = Math.Min(a, b) To 1 Step -1
             If a Mod i = 0 AndAlso b Mod i = 0 Then
                 Console.WriteLine(i)
                 Console.ReadKey()
