@@ -4,6 +4,4 @@ install:
 - sudo apt-get install mono-devel mono-gmcs nunit-console
 
 script:
-- xbuild 002-Hadanka/002-Hadanka.sln
-- xbuild 003-NSD/003-NSD.sln
 - xbuild 3.2-Binarni/3.2-Binarni.sln
