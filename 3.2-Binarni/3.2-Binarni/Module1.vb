@@ -14,7 +14,5 @@ Module Module1
                 Console.WriteLine(Convert.ToInt64(tmp, 2))
         End Select
         Console.ReadKey()
-
     End Sub
-
 End Module
