@@ -4,8 +4,9 @@ Module Module1
     Dim e as double = 1+x
     Dim i = 2
     dim f = 2
+    dim eps
     Do
-        Dim eps=(x^i)/(f)
+        eps=(x^i)/(f)
         e+=eps
         f=f*i
         i+=1
