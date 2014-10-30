@@ -4,11 +4,12 @@ Module Module1
     Dim e as double = 1+x
     Dim i = 2
     dim f = 2
-    While true
-        e+=(x^i)/(f)
+    Do
+        eps=(x^i)/(f)
+        e+=eps
         f=f*i
         i+=1
         Console.writeline(e)
-    End while
+    Loop while eps>0.0001
   End Sub
 End Module
