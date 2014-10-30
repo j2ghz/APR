@@ -5,7 +5,7 @@ Module Module1
     Dim i = 2
     dim f = 2
     Do
-        eps=(x^i)/(f)
+        Dim eps=(x^i)/(f)
         e+=eps
         f=f*i
         i+=1
