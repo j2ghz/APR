@@ -8,5 +8,6 @@
         Next
         pole2.Remove(pole2.Max)
         Console.WriteLine(pole2.Max)
+        Console.ReadKey()
     End Sub
 End Module
