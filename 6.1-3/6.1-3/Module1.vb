@@ -40,12 +40,12 @@
         For i As Integer = 1 To Math.Min(radky, sloupce)
             diag += matice(i, i)
         Next
-        Console.WriteLine("Diagonálový součet : {1}", diag)
+        Console.WriteLine("Diagonálový součet : {0}", diag)
         Dim vdiag As Integer = 0
         For i As Integer = 1 To Math.Min(radky, sloupce)
-            vdiag += matice(i, i)
+            vdiag += matice(i, sloupce - i + 1)
         Next
-        Console.WriteLine("Diagonálový součet : {1}", vdiag)
+        Console.WriteLine("Vedlejší diagonálový součet : {0}", vdiag)
         Console.ReadKey()
     End Sub
 
