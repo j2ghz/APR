@@ -46,6 +46,13 @@
             vdiag += matice(i, sloupce - i + 1)
         Next
         Console.WriteLine("Vedlejší diagonálový součet : {0}", vdiag)
+        Dim nul As Integer
+        For radek As Integer = 1 To radky
+            For sloupec As Integer = 1 To sloupce
+                If matice(radek, sloupec) = 0 Then nul += 1
+            Next
+        Next
+        Console.WriteLine("Počet nulových prvků: {0}", nul)
         Console.ReadKey()
     End Sub
 
