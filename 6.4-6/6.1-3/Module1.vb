@@ -20,39 +20,20 @@
             Next
             Console.WriteLine()
         Next
-        For radek As Integer = 1 To radky
-            Dim tmp As Integer = 0
-            For sloupec As Integer = 1 To sloupce
-                tmp += matice(radek, sloupec)
-            Next
-            Console.WriteLine("Řádkový součet {0}: {1}", radek, tmp)
-            tmp = 0
-        Next
-        For sloupec As Integer = 1 To sloupce
-            Dim tmp As Integer = 0
-            For radek As Integer = 1 To radky
-                tmp += matice(radek, sloupec)
-            Next
-            Console.WriteLine("Sloupcový součet {0}: {1}", sloupec, tmp)
-            tmp = 0
-        Next
-        Dim diag As Integer = 0
-        For i As Integer = 1 To Math.Min(radky, sloupce)
-            diag += matice(i, i)
-        Next
-        Console.WriteLine("Diagonálový součet : {0}", diag)
-        Dim vdiag As Integer = 0
-        For i As Integer = 1 To Math.Min(radky, sloupce)
-            vdiag += matice(i, sloupce - i + 1)
-        Next
-        Console.WriteLine("Vedlejší diagonálový součet : {0}", vdiag)
-        Dim nul As Integer
+        Console.Write("Který řádek vyměnit? ") : Dim Vradek As Integer = Console.ReadLine
+        Console.Write("S kterým? ") : Dim Vradek2 As Integer = Console.ReadLine
+        Dim matice2(radky, sloupce) As Integer
         For radek As Integer = 1 To radky
             For sloupec As Integer = 1 To sloupce
-                If matice(radek, sloupec) = 0 Then nul += 1
+                matice2(radek, sloupec) = matice(IIf(radek = Vradek, Vradek2, IIf(radek = Vradek2, Vradek, radek)), sloupec)
             Next
         Next
-        Console.WriteLine("Počet nulových prvků: {0}", nul)
+        For radek As Integer = 1 To radky
+            For sloupec As Integer = 1 To sloupce
+                Console.Write(matice2(radek, sloupec) & IIf(sloupec = sloupce, "", ","))
+            Next
+            Console.WriteLine()
+        Next
         Console.ReadKey()
     End Sub
 
