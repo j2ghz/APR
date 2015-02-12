@@ -15,42 +15,44 @@
         Dim s As Integer = 1
         Dim i = 1
         Dim smer As _smer = _smer.right
-        While i < sloupce
+        Dim plus As Integer = 0
+        While i <= sloupce * sloupce
+            Console.Clear()
             Select Case smer
                 Case _smer.right
                     matice(r, s) = i
                     i += 1
                     s += 1
-                    If s = radky Then
+                    If s = radky - plus Then
                         smer = _smer.down
                     End If
                 Case _smer.down
                     matice(r, s) = i
                     i += 1
                     r += 1
-                    If r = radky Then
+                    If r = radky - plus Then
                         smer = _smer.left
                     End If
                 Case _smer.left
                     matice(r, s) = i
                     i += 1
                     s -= 1
-                    If s = radky Then
+                    If s = 1 + plus Then
                         smer = _smer.up
+                        plus += 1
                     End If
                 Case _smer.up
                     matice(r, s) = i
                     i += 1
                     r -= 1
-                    If s = radky Then
+                    If r = 1 + plus Then
                         smer = _smer.right
-                        radky -= 1
                     End If
             End Select
         End While
         For radek As Integer = 1 To radky
             For sloupec As Integer = 1 To sloupce
-                Console.Write(matice(radek, sloupec) & IIf(sloupec = sloupce, "", ","))
+                Console.Write(CStr(matice(radek, sloupec)).PadLeft(Math.Round(Math.Log10(i * i), 0, MidpointRounding.AwayFromZero)), "0" & IIf(sloupec = sloupce, "", ","))
             Next
             Console.WriteLine()
         Next
