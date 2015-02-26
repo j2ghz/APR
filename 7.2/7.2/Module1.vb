@@ -1,27 +1,29 @@
 ﻿Module Module1
     Sub Main()
+        For i As Integer = -1 To 50
+            Console.WriteLine(spocitej(i))
+        Next
+        Console.ReadKey()
+    End Sub
+    Function spocitej(ByVal x As Double) As Double
+        Dim e As Double = 1 + x
         Try
-            Console.Write("Zadejte mocninu pro výpočet Eulerova čísla: ")
-            Dim x As Double = CDbl(Console.ReadLine)
-            Dim e As Double = 1 + x
             Dim i = 3
             Dim f = 2
-            Dim eps = 0
+            Dim eps As Double = 0
             Dim n = x * x
             Do
-                pripocitej(eps, n, f, e, i, x)
-            Loop While eps > 0.0001
-            Console.WriteLine(e)
-            Console.ReadKey()
-        Catch e As Exception
-            MsgBox(e.ToString, MsgBoxStyle.Critical, "ERROR " & Err.Number & " - " & Err.Description)
+                eps = (n) / (f)
+                e += eps
+                f = f * i
+                x *= x
+                i += 1
+            Loop While Math.Abs(eps) > 0.0001
+        Catch ex As Exception
+            Console.WriteLine()
+            Console.WriteLine("ERROR " & Err.Number & " - " & Err.Description)
+            Console.WriteLine(ex.ToString)
         End Try
-    End Sub
-    Sub pripocitej(ByRef eps, ByRef n, ByRef f, ByRef e, ByRef i, ByRef x)
-        eps = (n) / (f)
-        e += eps
-        f = f * i
-        x *= x
-        i += 1
-    End Sub
+        Return e
+    End Function
 End Module
