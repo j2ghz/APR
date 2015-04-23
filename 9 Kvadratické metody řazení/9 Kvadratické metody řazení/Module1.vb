@@ -36,6 +36,16 @@
     End Function
 
     Function InsertSort(ByVal vstup() As Integer) As Integer()
+        Dim j, x
+        For i As Integer = 1 To vstup.Length - 1
+            x = vstup(i)
+            j = i - 1
+            While j > 0 And x < vstup(j)
+                vstup(j + 1) = vstup(j)
+                j = j - 1
+            End While
+            vstup(j + 1) = x
+        Next
         Return vstup
     End Function
 
