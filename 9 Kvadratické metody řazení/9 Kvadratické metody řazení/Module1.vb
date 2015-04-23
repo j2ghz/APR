@@ -7,14 +7,19 @@
         'For i As Integer = 0 To delka - 1
         '    pole(i) = rand.Next(0, delka * 10)
         'Next
-        Dim pole() = {6, 8, 7, 9, 3, 4, 5, 2, 1}
+        Dim pole() = {6, 8, 7, 9, 3, 4, 5, 2, 1, -20, 30, -1}
+        Console.WriteLine("Pole nesetříděné:")
         Console.WriteLine(vypsatpole(pole))
+        Console.WriteLine("SelectSort:")
         Console.WriteLine(vypsatpole(SelectSort(pole)))
-        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1}
+        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1, -20, 30, -1}
+        Console.WriteLine("InsertSort:")
         Console.WriteLine(vypsatpole(InsertSort(pole)))
-        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1}
+        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1, -20, 30, -1}
+        Console.WriteLine("BubbleSort:")
         Console.WriteLine(vypsatpole(BubbleSort(pole)))
-        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1}
+        pole = {6, 8, 7, 9, 3, 4, 5, 2, 1, -20, 30, -1}
+        Console.WriteLine("Array.Sort:")
         Array.Sort(pole)
         Console.WriteLine(vypsatpole(pole))
         Console.ReadKey()
