@@ -36,20 +36,36 @@
     End Function
 
     Function InsertSort(ByVal vstup() As Integer) As Integer()
-        Dim j, x
-        For i As Integer = 1 To vstup.Length - 1
-            x = vstup(i)
+        Dim i, j As Integer
+        For i = 1 To vstup.Length - 1
+            Dim x As Integer = vstup(i)
+            Dim k As Integer = 0
             j = i - 1
-            While j > 0 And x < vstup(j)
-                vstup(j + 1) = vstup(j)
-                j = j - 1
+            While (j >= 0 And k <> 1)
+                If (x < vstup(j)) Then
+                    vstup(j + 1) = vstup(j)
+                    j -= 1
+                    vstup(j + 1) = x
+                Else : k = 1
+                End If
             End While
-            vstup(j + 1) = x
         Next
         Return vstup
     End Function
 
     Function BubbleSort(ByVal vstup() As Integer) As Integer()
+        Dim nesetrideno As Boolean = True
+        While nesetrideno
+            nesetrideno = False
+            For i = 0 To vstup.Length - 2
+                If vstup(i) > vstup(i + 1) Then
+                    Dim tmp = vstup(i + 1)
+                    vstup(i + 1) = vstup(i)
+                    vstup(i) = tmp
+                    nesetrideno = True
+                End If
+            Next
+        End While
         Return vstup
     End Function
 
