@@ -1,10 +1,8 @@
 ﻿Module Module1
 
     Sub Main()
-        Dim st As New Stopwatch
-        st.Start()
-        Dim a As Decimal = 0
-        Dim b As Decimal = 1
+        Dim a As Decimal = Console.ReadLine
+        Dim b As Decimal = Console.ReadLine
         Dim last As Decimal
         Dim fx As Decimal
         Dim konec As Boolean = False
@@ -24,8 +22,6 @@
             'Console.WriteLine(String.Join(Environment.NewLine, fx, a, b, x))
             Console.WriteLine(x)
         Loop Until konec
-        st.Stop()
-        Console.WriteLine(st.Elapsed)
         Console.ReadKey()
     End Sub
 
