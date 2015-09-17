@@ -9,7 +9,7 @@
         Do
             Dim fa As Decimal = f(a)
             Dim fb As Decimal = f(b)
-            Dim x = (a + b) / 2
+            Dim x = (a * fb - b * fa) / (fb - fa)
             fx = f(x)
             Select Case Math.Sign(fx)
                 Case Math.Sign(fa)
