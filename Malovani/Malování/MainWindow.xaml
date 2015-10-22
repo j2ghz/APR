@@ -16,6 +16,7 @@
                 <MenuItem Header="_Exit" Name="exit" />
             </MenuItem>
         </Menu>
-        <InkCanvas Name="canvas" />
+        <InkCanvas Name="canvas" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        </InkCanvas>
     </DockPanel>
 </Window>
