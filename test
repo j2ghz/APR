@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <!-- directory where the solution files are -->
+    <SlnDir Condition="'$(SlnDir)' == ''">$(MSBuildThisFileDirectory)</SlnDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- list solution files -->
+    <ProjectFiles Include="$(SlnDir)\*.sln"/>
+    <!-- list configurations to build -->
+    <Configurations Include="Debug;Release"/>
+  </ItemGroup>
+
+  <Target Name="Build">
+    <MSBuild Projects="@(ProjectFiles)" Targets="Cli" Properties="Configuration=%(Configurations.Identity)"/>
+  </Target>
+
+</Project>
