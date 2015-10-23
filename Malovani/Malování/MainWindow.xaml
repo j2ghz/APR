@@ -15,8 +15,19 @@
                 <Separator />
                 <MenuItem Header="_Exit" Name="exit" />
             </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Undo" Name="undo" InputGestureText="Ctrl+Z" />
+                <MenuItem Header="_Redo" Name="redo" InputGestureText="Ctrl+Y" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="_Convert">
+                <MenuItem Header="_Greyscale" Name="greyscale" />
+                <MenuItem Header="_Negative" Name="negative" />
+            </MenuItem>
         </Menu>
-        <InkCanvas Name="canvas" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-        </InkCanvas>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="WhiteSmoke">
+
+            <InkCanvas Name="canvas" HorizontalAlignment="Left" VerticalAlignment="Top">
+            </InkCanvas>
+        </ScrollViewer>
     </DockPanel>
 </Window>
