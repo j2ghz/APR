@@ -24,7 +24,6 @@
             Console.WriteLine(v)
         Next
         Console.ReadKey()
-        'TODO: predelat na funkci, pridat testy
     End Sub
 
 End Module
