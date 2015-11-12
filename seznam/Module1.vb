@@ -9,32 +9,66 @@
             ted.dalsi = a
             ted = a
         Next
-        'zemnsit o jedna
+
+        vypis(prvni)
+
         ted = prvni
         For i As Integer = 1 To 10
-            ted.hodnota -= 1
-            ted = ted.dalsi
+            Dim a As New prvek(0)
+            a.dalsi = ted.dalsi
+            ted.dalsi = a
+            ted = ted.dalsi.dalsi
         Next
-        'vypsat
+
+        vypis(prvni)
+
         ted = prvni
-        For i As Integer = 1 To 10
-            Console.WriteLine(ted.hodnota)
-            ted = ted.dalsi
-        Next
-        'najit
-        ted = prvni
-        Console.WriteLine("zadejte cislo:")
-        Dim x = Console.ReadLine
-        For i As Integer = 1 To 10
-            If ted.hodnota = x Then
-                Console.WriteLine("cislo v seznamu je")
-                Console.ReadKey()
-                Exit Sub
+        While ted IsNot Nothing AndAlso ted.dalsi IsNot Nothing
+            If ted.dalsi.hodnota = 0 Then
+                ted.dalsi = ted.dalsi.dalsi
             End If
             ted = ted.dalsi
-        Next
-        Console.WriteLine("neni")
+        End While
+
+        vypis(prvni)
+
+        Dim b As New prvek(0)
+        b.dalsi = prvni
+        prvni = b
+
+        vypis(prvni)
+
+        ted = prvni
+        While ted.dalsi IsNot Nothing
+            ted = ted.dalsi
+        End While
+        Dim c As New prvek(121)
+        ted.dalsi = c
+
+        vypis(prvni)
+
+        prvni = prvni.dalsi
+
+        vypis(prvni)
+
+        ted = prvni
+        While ted.dalsi.dalsi IsNot Nothing
+            ted = ted.dalsi
+        End While
+        ted.dalsi = Nothing
+
+        vypis(prvni)
+
         Console.ReadKey()
+    End Sub
+    Sub vypis(prvni As prvek)
+        Dim ted As prvek = prvni
+        While IsNothing(ted) = False
+            Console.Write(ted.hodnota & ", ")
+            ted = ted.dalsi
+        End While
+        Console.WriteLine()
+        Console.WriteLine("=================================================================")
     End Sub
 End Module
 Public Class prvek
