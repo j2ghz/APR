@@ -39,7 +39,7 @@ Class Fronta
             Konec.Dalsi = p
             Konec = p
         End If
-        _delka += 1
+        _delka += BigInteger.One
     End Sub
     Sub Pridej(ParamArray prvky() As BigInteger)
         For Each prvek In prvky
