@@ -1,7 +1,7 @@
 ﻿Module Module1
 
     Sub Main()
-        Console.WriteLine("Zadavejte cisla do stromu, 0 pro konec")
+        Console.WriteLine("Zadavejte cisla do stromu, kazde na jeden radek, 0 pro konec zadavani")
         Dim strom As New Strom
         Dim a = Console.ReadLine()
         While a <> 0
@@ -71,9 +71,9 @@ Class Strom
 
     Sub Prochazej(uzel As Uzel)
         If uzel IsNot Nothing Then
-            Prochazej(uzel.Levy)
-            Console.WriteLine(uzel.Hodnota)
             Prochazej(uzel.Pravy)
+            Console.WriteLine(uzel.Hodnota)
+            Prochazej(uzel.Levy)
         End If
     End Sub
 End Class
