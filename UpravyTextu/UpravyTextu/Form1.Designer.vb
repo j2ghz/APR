@@ -38,6 +38,7 @@ Partial Class Form1
         Me.ToolStripStatusLabelCarky = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabelSlova = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ToolStripStatusNejdelsi = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -122,7 +123,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelCarky, Me.ToolStripStatusLabelSlova})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelCarky, Me.ToolStripStatusLabelSlova, Me.ToolStripStatusNejdelsi})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 487)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(645, 22)
@@ -149,6 +150,12 @@ Partial Class Form1
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(645, 463)
         Me.TextBox1.TabIndex = 2
+        '
+        'ToolStripStatusNejdelsi
+        '
+        Me.ToolStripStatusNejdelsi.Name = "ToolStripStatusNejdelsi"
+        Me.ToolStripStatusNejdelsi.Size = New System.Drawing.Size(86, 17)
+        Me.ToolStripStatusNejdelsi.Text = "Nejdelsi slovo: "
         '
         'Form1
         '
@@ -186,4 +193,5 @@ Partial Class Form1
     Friend WithEvents ZavritToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SifraToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ToolStripStatusNejdelsi As ToolStripStatusLabel
 End Class
